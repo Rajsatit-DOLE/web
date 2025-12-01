@@ -1,0 +1,1978 @@
+<!doctype html>
+<html lang="th">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ศูนย์ส่งเสริมการเรียนรู้ระดับอำเภอไชโย</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Kanit', sans-serif;
+            background-color: #f5f7fa;
+            width: 100%;
+        }
+        
+        html, body {
+            height: 100%;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+
+        .main-wrapper {
+            width: 100%;
+            min-height: 100%;
+        }
+
+        /* Theme Variables */
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1d4ed8;
+            --accent-color: #fbbf24;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .navbar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            color: #475569;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .login-btn {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-family: 'Kanit', sans-serif;
+            transition: background 0.3s;
+            position: relative;
+        }
+
+        .login-btn:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            background: var(--accent-color);
+            color: #1e293b;
+            padding: 1rem 2.5rem;
+            border-radius: 10px;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Kanit', sans-serif;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: #f59e0b;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(251, 191, 36, 0.4);
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .section-text {
+            color: #475569;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Personnel Section */
+        .personnel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .personnel-item {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+        }
+
+        .personnel-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .personnel-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            object-fit: cover;
+            border: 4px solid #e0e7ff;
+        }
+
+        .personnel-avatar-placeholder {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e0e7ff 0%, #dbeafe 100%);
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .personnel-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.3rem;
+        }
+
+        .personnel-position {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        /* News Section */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            transition: transform 0.3s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .news-date {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .news-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+
+        .news-excerpt {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .news-card .news-item-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .news-card .news-item-images img {
+            width: 100%;
+            height: auto;
+            max-height: 280px;
+            object-fit: contain;
+            border-radius: 8px;
+            background: #f8fafc;
+            padding: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .news-card .news-item-images img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Districts Section */
+        .districts-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 3rem;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .districts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .district-btn {
+            background: #f1f5f9;
+            color: #334155;
+            border: 2px solid #e2e8f0;
+            padding: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-family: 'Kanit', sans-serif;
+            transition: all 0.3s;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+        }
+
+        .district-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Login Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-overlay.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            width: 90%;
+            max-width: 450px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            max-height: 90%;
+            overflow-y: auto;
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #334155;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-family: 'Kanit', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.9rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-family: 'Kanit', sans-serif;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 1rem;
+        }
+
+        .btn-submit:hover {
+            background: var(--secondary-color);
+        }
+
+        .btn-submit:disabled {
+            background: #94a3b8;
+            cursor: not-allowed;
+        }
+
+        .btn-cancel {
+            width: 100%;
+            background: transparent;
+            color: #64748b;
+            padding: 0.9rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-weight: 600;
+            font-family: 'Kanit', sans-serif;
+            cursor: pointer;
+            margin-top: 0.8rem;
+            font-size: 1rem;
+        }
+
+        .btn-cancel:hover {
+            background: #f1f5f9;
+        }
+
+        .error-message {
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 0.8rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            text-align: center;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        /* Admin Panel */
+        .admin-panel {
+            display: none;
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 1200px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .admin-panel.show {
+            display: block;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .btn-logout {
+            background: #ef4444;
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        .btn-logout:hover {
+            background: #dc2626;
+        }
+
+        .btn-add {
+            background: #10b981;
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-family: 'Kanit', sans-serif;
+            font-size: 1rem;
+        }
+
+        .btn-add:hover {
+            background: #059669;
+        }
+
+        .admin-form {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            display: none;
+        }
+
+        .admin-form.show {
+            display: block;
+        }
+
+        .upload-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .upload-tab-btn {
+            flex: 1;
+            background: #f1f5f9;
+            color: #64748b;
+            border: 2px solid #e2e8f0;
+            padding: 0.8rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-family: 'Kanit', sans-serif;
+            transition: all 0.3s;
+        }
+
+        .upload-tab-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .upload-tab-btn:hover:not(.active) {
+            background: #e2e8f0;
+        }
+
+        .upload-tab-content {
+            display: none;
+        }
+
+        .upload-tab-content.active {
+            display: block;
+        }
+
+        .image-upload-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .image-upload-box {
+            border: 2px dashed #cbd5e1;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: white;
+        }
+
+        .image-upload-box:hover {
+            border-color: var(--primary-color);
+            background: #f0f9ff;
+        }
+
+        .image-upload-box.has-image {
+            border-style: solid;
+            border-color: #10b981;
+        }
+
+        .image-preview {
+            max-width: 100%;
+            max-height: 200px;
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+            object-fit: contain;
+            background: #f8fafc;
+        }
+
+        .news-list, .personnel-admin-list {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .list-item {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 1rem;
+            align-items: start;
+        }
+
+        .list-item-content h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+
+        .list-item-content p {
+            color: #64748b;
+            margin-bottom: 0.8rem;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            line-height: 1.8;
+        }
+
+        .list-item-date {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .news-item-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .news-item-images img {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: contain;
+            border-radius: 8px;
+            background: #f8fafc;
+            padding: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .list-item-actions {
+            display: flex;
+            gap: 0.5rem;
+            flex-direction: column;
+        }
+
+        .btn-delete {
+            background: #ef4444;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Kanit', sans-serif;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .btn-delete:hover {
+            background: #dc2626;
+        }
+
+        .btn-edit {
+            background: #f59e0b;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Kanit', sans-serif;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .btn-edit:hover {
+            background: #d97706;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: #94a3b8;
+        }
+
+        .admin-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .admin-tab {
+            background: transparent;
+            border: none;
+            padding: 1rem 1.5rem;
+            font-family: 'Kanit', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #64748b;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .admin-tab:hover {
+            color: var(--primary-color);
+        }
+
+        .admin-tab.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .admin-tab-content {
+            display: none;
+        }
+
+        .admin-tab-content.active {
+            display: block;
+        }
+
+        .personnel-item-admin {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .personnel-item-admin img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .personnel-avatar-small {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e0e7ff 0%, #dbeafe 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .limit-warning {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            text-align: center;
+            display: none;
+        }
+
+        .limit-warning.show {
+            display: block;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #10b981;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            display: none;
+            z-index: 3000;
+            animation: slideIn 0.3s ease;
+        }
+
+        .toast.show {
+            display: block;
+        }
+
+        .toast.error {
+            background: #ef4444;
+        }
+
+        /* Theme Selector */
+        .theme-selector {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .theme-options {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .theme-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            border: 3px solid #e2e8f0;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .theme-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .theme-btn.active {
+            border-color: #1e293b;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .theme-btn.active::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        /* Sort Controls */
+        .sort-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .sort-btn {
+            background: #f1f5f9;
+            color: #334155;
+            border: 2px solid #e2e8f0;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-family: 'Kanit', sans-serif;
+            transition: all 0.3s;
+        }
+
+        .sort-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .sort-btn:hover:not(.active) {
+            background: #e2e8f0;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                margin-top: 1rem;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .list-item {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                padding: 1.5rem;
+            }
+
+            .personnel-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+
+            .toast {
+                right: 1rem;
+                left: 1rem;
+            }
+
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .image-upload-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body>
+  <div class="main-wrapper"><!-- Navigation -->
+   <nav class="navbar">
+    <div class="navbar-content"><a href="#home" class="navbar-brand">โรงเรียนตัวอย่าง</a>
+     <ul class="nav-links">
+      <li><a href="#home" class="nav-link">หน้าแรก</a></li>
+      <li><a href="#history" class="nav-link">ประวัติ</a></li>
+      <li><a href="#personnel" class="nav-link">บุคลากร</a></li>
+      <li><button class="login-btn" id="loginBtn">เข้าสู่ระบบครู</button></li>
+     </ul>
+    </div>
+   </nav><!-- Hero Section -->
+   <header id="home" class="hero-section">
+    <div class="hero-content">
+     <h1 class="hero-title">ยินดีต้อนรับสู่ศูนย์ส่งเสริมการเรียนรู้ระดับอำเภอไชโย</h1>
+     <p class="hero-subtitle">แหล่งเรียนรู้คู่คุณธรรม สร้างสรรค์ปัญญา พัฒนาสู่สากล</p><a href="#online-class" class="cta-button">เข้าสู่ห้องเรียนออนไลน์ 9 ตำบล</a>
+    </div>
+   </header><!-- Main Content -->
+   <div class="main-content"><!-- Admin Panel -->
+    <div class="admin-panel" id="adminPanel">
+     <div class="admin-header">
+      <h2 class="section-title" style="margin: 0;">ระบบจัดการเว็บไซต์</h2><button class="btn-logout" id="logoutBtn">ออกจากระบบ</button>
+     </div><!-- Theme Selector -->
+     <div class="theme-selector">
+      <h3 style="font-size: 1.2rem; font-weight: 600; color: #1e293b; margin-bottom: 0.5rem;">🎨 เลือกสีธีม</h3>
+      <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 1rem;">เปลี่ยนสีหลักของเว็บไซต์</p>
+      <div class="theme-options" id="themeOptions"><button class="theme-btn active" data-theme="blue" style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);" title="น้ำเงิน"></button> <button class="theme-btn" data-theme="green" style="background: linear-gradient(135deg, #059669 0%, #047857 100%);" title="เขียว"></button> <button class="theme-btn" data-theme="purple" style="background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);" title="ม่วง"></button> <button class="theme-btn" data-theme="red" style="background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);" title="แดง"></button> <button class="theme-btn" data-theme="orange" style="background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);" title="ส้ม"></button>
+      </div>
+     </div><!-- Admin Tabs -->
+     <div class="admin-tabs"><button class="admin-tab active" data-tab="news">ข่าวประชาสัมพันธ์</button> <button class="admin-tab" data-tab="personnel">บุคลากร</button> <button class="admin-tab" data-tab="history">ประวัติโรงเรียน</button> <button class="admin-tab" data-tab="districts">ลิงค์ห้องเรียนออนไลน์</button>
+     </div><!-- History Tab -->
+     <div class="admin-tab-content" id="historyTab">
+      <h3 style="margin-bottom: 1.5rem; color: #1e293b;">แก้ไขประวัติโรงเรียน</h3>
+      <form id="historyFormElement">
+       <div class="form-group"><label class="form-label" for="historyTitle">หัวข้อ *</label> <input type="text" id="historyTitle" class="form-input" required>
+       </div>
+       <div class="form-group"><label class="form-label" for="historyContent">เนื้อหาประวัติโรงเรียน *</label> <textarea id="historyContent" class="form-input" rows="10" required style="min-height: 250px;"></textarea>
+       </div><button type="submit" class="btn-submit">บันทึกประวัติ</button>
+      </form>
+     </div><!-- News Tab -->
+     <div class="admin-tab-content active" id="newsTab">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;"><button class="btn-add" id="addNewsBtn">+ เพิ่มข่าวใหม่</button>
+       <div class="sort-controls"><span style="color: #64748b; font-weight: 600;">เรียงตาม:</span> <button class="sort-btn active" data-sort="newest">ใหม่สุดก่อน</button> <button class="sort-btn" data-sort="oldest">เก่าสุดก่อน</button>
+       </div>
+      </div><!-- News Form -->
+      <div class="admin-form" id="newsForm">
+       <h3 style="margin-bottom: 1.5rem; color: #1e293b;" id="newsFormTitle">เพิ่มข่าวประชาสัมพันธ์</h3>
+       <form id="newsFormElement">
+        <div class="form-group"><label class="form-label" for="newsTitle">หัวข้อข่าว *</label> <input type="text" id="newsTitle" class="form-input" required>
+        </div>
+        <div class="form-group"><label class="form-label" for="newsContent">รายละเอียด *</label> <textarea id="newsContent" class="form-input" rows="8" required style="min-height: 200px;"></textarea>
+        </div>
+        <div class="form-group"><label class="form-label">รูปภาพ (สูงสุด 4 รูป) - รองรับขนาดใหญ่ 1444x2000 px</label>
+         <div style="background: #e0f2fe; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+          <p style="font-size: 0.95rem; color: #075985; margin: 0 0 0.5rem 0; font-weight: 600;">💡 3 วิธีเพิ่มรูปภาพ:</p>
+          <ol style="margin: 0; padding-left: 1.5rem; color: #0c4a6e; font-size: 0.9rem; line-height: 1.6;">
+           <li><strong>อัพโหลดจากเครื่อง</strong> - รองรับรูปขนาดใหญ่ถึง 1444x2000 px ✅</li>
+           <li><strong>ใส่ลิงค์จาก Google Drive/pic.in.th</strong> - แนะนำสำหรับรูปขนาดใหญ่ ✨</li>
+           <li><strong>อัพไปที่ <a href="https://pic.in.th/" target="_blank" rel="noopener noreferrer" style="color: #0369a1; text-decoration: underline;">pic.in.th</a></strong> แล้วคัดลอกลิงค์มาใส่</li>
+          </ol>
+          <p style="font-size: 0.85rem; color: #075985; margin: 0.8rem 0 0 0; font-weight: 600;">📐 <strong>ขนาดแนะนำ:</strong> 1444 x 2000 pixels (อัตราส่วน 72:100)<br>
+            📊 <strong>ข้อมูล:</strong> รูปจะแสดงผลอัตโนมัติตา���ขนาดจริง ไม่บิดเบี้ยว</p>
+         </div>
+         <div class="upload-tabs"><button type="button" class="upload-tab-btn active" data-tab="upload">📤 อัพโหลดไฟล์</button> <button type="button" class="upload-tab-btn" data-tab="link">🔗 ใส่ลิงค์</button>
+         </div><!-- Upload Tab -->
+         <div class="upload-tab-content active" id="uploadTab">
+          <div class="image-upload-grid">
+           <div class="image-upload-box" id="newsUploadBox1" data-index="1"><span style="font-size: 2rem;">📷</span> <span style="font-size: 0.9rem; color: #64748b; margin-top: 0.5rem;">รูปที่ 1</span> <span style="font-size: 0.75rem; color: #94a3b8; margin-top: 0.2rem;">รองรับ 1444x2000px</span> <input type="file" id="newsImageInput1" accept="image/*" style="display: none;">
+           </div>
+           <div class="image-upload-box" id="newsUploadBox2" data-index="2"><span style="font-size: 2rem;">📷</span> <span style="font-size: 0.9rem; color: #64748b; margin-top: 0.5rem;">รูปที่ 2</span> <span style="font-size: 0.75rem; color: #94a3b8; margin-top: 0.2rem;">รองรับ 1444x2000px</span> <input type="file" id="newsImageInput2" accept="image/*" style="display: none;">
+           </div>
+           <div class="image-upload-box" id="newsUploadBox3" data-index="3"><span style="font-size: 2rem;">📷</span> <span style="font-size: 0.9rem; color: #64748b; margin-top: 0.5rem;">รูปที่ 3</span> <span style="font-size: 0.75rem; color: #94a3b8; margin-top: 0.2rem;">รองรับ 1444x2000px</span> <input type="file" id="newsImageInput3" accept="image/*" style="display: none;">
+           </div>
+           <div class="image-upload-box" id="newsUploadBox4" data-index="4"><span style="font-size: 2rem;">📷</span> <span style="font-size: 0.9rem; color: #64748b; margin-top: 0.5rem;">รูปที่ 4</span> <span style="font-size: 0.75rem; color: #94a3b8; margin-top: 0.2rem;">รองรับ 1444x2000px</span> <input type="file" id="newsImageInput4" accept="image/*" style="display: none;">
+           </div>
+          </div>
+         </div><!-- Link Tab -->
+         <div class="upload-tab-content" id="linkTab">
+          <div style="display: grid; gap: 1rem;">
+           <div><label class="form-label" style="font-size: 0.9rem;">🔗 ลิงค์รูปที่ 1</label> <input type="url" id="newsLinkInput1" class="form-input" placeholder="https://pic.in.th/xxxxx.jpg">
+           </div>
+           <div><label class="form-label" style="font-size: 0.9rem;">🔗 ลิงค์รูปที่ 2</label> <input type="url" id="newsLinkInput2" class="form-input" placeholder="https://pic.in.th/xxxxx.jpg">
+           </div>
+           <div><label class="form-label" style="font-size: 0.9rem;">🔗 ลิงค์รูปที่ 3</label> <input type="url" id="newsLinkInput3" class="form-input" placeholder="https://pic.in.th/xxxxx.jpg">
+           </div>
+           <div><label class="form-label" style="font-size: 0.9rem;">🔗 ลิงค์รูปที่ 4</label> <input type="url" id="newsLinkInput4" class="form-input" placeholder="https://pic.in.th/xxxxx.jpg">
+           </div>
+          </div>
+          <div style="background: #fef3c7; padding: 0.8rem; border-radius: 6px; margin-top: 1rem; font-size: 0.85rem; color: #92400e;">
+           📌 <strong>วิธีใช้ pic.in.th (แนะนำ):</strong><br>
+            1. เข้า <a href="https://pic.in.th/" target="_blank" rel="noopener noreferrer" style="color: #0369a1; text-decoration: underline;">pic.in.th</a> และอัพโหลดรูป<br>
+            2. คลิกขวาที่รูป → Copy image address<br>
+            3. นำลิงค์มาวางในช่องด้านบน ✅<br><br><strong>วิธีใช้ Google Drive:</strong><br>
+            1. อัพรูปไป Google Drive → แชร์ → "ทุกคนที่มีลิงค์ดูได้"<br>
+            2. คัดลอก ID จาก URL แล้วใส่: <code style="background: #fff; padding: 0.2rem 0.4rem; border-radius: 3px;">https://drive.google.com/uc?id=<strong>ID_ของคุณ</strong></code>
+          </div>
+         </div>
+        </div><button type="submit" class="btn-submit" id="newsSubmitBtn">บันทึกข่าว</button> <button type="button" class="btn-cancel" id="cancelNewsFormBtn">ยกเลิก</button>
+       </form>
+      </div><!-- News List -->
+      <div class="news-list" id="newsList"></div>
+     </div><!-- Personnel Tab -->
+     <div class="admin-tab-content" id="personnelTab">
+      <div class="limit-warning" id="personnelLimitWarning">
+       ⚠�� จำนวนบุคลากรถึงขีดจำกัด 17 คนแล้ว กรุณาลบบุคลากรเก่าก่อนเพิ่มใหม่
+      </div><button class="btn-add" id="addPersonnelBtn">+ เพิ่มบุคลากร</button> <!-- Personnel Form -->
+      <div class="admin-form" id="personnelForm">
+       <h3 style="margin-bottom: 1.5rem; color: #1e293b;">เพิ่มบุคลากร</h3>
+       <form id="personnelFormElement">
+        <div class="form-group"><label class="form-label" for="personnelName">ชื่อ-นามสกุล *</label> <input type="text" id="personnelName" class="form-input" required>
+        </div>
+        <div class="form-group"><label class="form-label" for="personnelPosition">ตำแหน่ง *</label> <input type="text" id="personnelPosition" class="form-input" required>
+        </div>
+        <div class="form-group"><label class="form-label">รูปภาพ</label>
+         <div class="upload-tabs"><button type="button" class="upload-tab-btn-personnel active" data-tab="upload">📤 อัพโหลดไฟล์</button> <button type="button" class="upload-tab-btn-personnel" data-tab="link">🔗 ใส่ลิงค์</button>
+         </div><!-- Upload Tab -->
+         <div class="upload-tab-content-personnel active" id="personnelUploadTab">
+          <div class="image-upload-box" id="personnelUploadBox" style="max-width: 300px; margin: 1rem 0 0 0;"><span style="font-size: 3rem;">👤</span> <span style="font-size: 0.9rem; color: #64748b; margin-top: 0.5rem;">คลิกเพื่ออัพโหลดรูป</span> <input type="file" id="personnelImageInput" accept="image/*" style="display: none;">
+          </div>
+         </div><!-- Link Tab -->
+         <div class="upload-tab-content-personnel" id="personnelLinkTab"><input type="url" id="personnelLinkInput" class="form-input" placeholder="https://pic.in.th/xxxxx.jpg" style="margin-top: 1rem;">
+          <div style="background: #e0f2fe; padding: 0.8rem; border-radius: 6px; margin-top: 0.5rem; font-size: 0.85rem; color: #075985;">
+           💡 ใส่ลิงค์รูปจาก pic.in.th หรือ Google Drive
+          </div>
+         </div>
+        </div><button type="submit" class="btn-submit">บันทึกบุคลากร</button> <button type="button" class="btn-cancel" id="cancelPersonnelFormBtn">ยกเลิก</button>
+       </form>
+      </div><!-- Personnel List -->
+      <div class="personnel-admin-list" id="personnelAdminList"></div>
+     </div><!-- Districts Tab -->
+     <div class="admin-tab-content" id="districtsTab">
+      <h3 style="margin-bottom: 1.5rem; color: #1e293b;">จัดก��รลิงค์ห้องเรียนออนไลน์ 9 ตำบล</h3>
+      <p style="color: #64748b; margin-bottom: 1.5rem;">ตั้งค่าลิงค์เว็บไซต์สำหรับแต่ละตำบล (ลิงค์จะเปิดในแท็บใหม่)</p>
+      <div id="districtLinksAdmin" style="display: grid; gap: 1.5rem;"><!-- District link forms will be generated here -->
+      </div>
+     </div>
+    </div>
+    <div class="content-grid"><!-- History Section -->
+     <div id="history" class="section-card">
+      <h2 class="section-title" id="historyDisplayTitle">ประวัติโรงเรียน</h2>
+      <p class="section-text" id="historyDisplayContent"></p>
+     </div>
+    </div><!-- Personnel Section -->
+    <div id="personnel" class="section-card">
+     <h2 class="section-title">บุคลากร</h2>
+     <div class="personnel-grid" id="personnelGrid"><!-- Personnel will be loaded here -->
+     </div>
+    </div><!-- News Section -->
+    <div id="news" class="section-card">
+     <h2 class="section-title">ข่าวประชาสัมพันธ์</h2>
+     <div class="news-grid" id="publicNewsGrid">
+      <div class="news-card">
+       <div class="news-date">
+        15 มกราค��� 2567
+       </div>
+       <h3 class="news-title">ประกาศรับสมัครนักเรียนใหม่</h3>
+       <p class="news-excerpt">เปิดรับสมัครนักเรียนระดับชั้น ม.1 และ ม.4 ประจำปีการศึกษา 2567</p>
+      </div>
+      <div class="news-card">
+       <div class="news-date">
+        10 มกราคม 2567
+       </div>
+       <h3 class="news-title">ตารางสอบกลางภาค</h3>
+       <p class="news-excerpt">ประกาศตารางสอบกลางภาคเรียนที่ 2 ประจำปีการศึกษา 2566</p>
+      </div>
+      <div class="news-card">
+       <div class="news-date">
+        5 มกราคม 2567
+       </div>
+       <h3 class="news-title">กิจกร���มวันเด็ก</h3>
+       <p class="news-excerpt">ขอเชิญร่วมกิจกรรมวันเด็กแห่งชาติ วันที่ 13 มกราคม 2567</p>
+      </div>
+     </div>
+    </div><!-- Districts Section -->
+    <div id="online-class" class="districts-section">
+     <h2 class="section-title">ห้องเรียนออนไลน์ 9 ตำบล</h2>
+     <p style="color: #64748b; margin-bottom: 1.5rem;">คลิกเพื่อเข้าสู่ห้องเรียนออนไลน์ของแต่ละตำบล</p>
+     <div class="districts-grid" id="districtsGrid"><a href="#" class="district-btn district-link" data-index="1">ตำบลไชโย</a> <a href="#" class="district-btn district-link" data-index="2">ตำบลจ��เข้ร้อง</a> <a href="#" class="district-btn district-link" data-index="3">ตำบลไชยภูมิ</a> <a href="#" class="district-btn district-link" data-index="4">ตำบลชะไว</a> <a href="#" class="district-btn district-link" data-index="5">ตำบลตรีนรงค์</a> <a href="#" class="district-btn district-link" data-index="6">ตำบลราชสถิตย์</a> <a href="#" class="district-btn district-link" data-index="7">ตำบลหลักฟ้า</a> <a href="#" class="district-btn district-link" data-index="8">ตำบลชัยฤทธิ์</a> <a href="#" class="district-btn district-link" data-index="9">ตำบลทวราช</a>
+     </div>
+    </div>
+   </div>
+  </div><!-- Login Modal -->
+  <div class="modal-overlay" id="loginModal">
+   <div class="modal-content">
+    <h2 class="modal-title">เข้าสู่ระบบครู</h2>
+    <div class="error-message" id="loginError">
+     ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง
+    </div>
+    <form id="loginForm">
+     <div class="form-group"><label class="form-label" for="username">ชื่อผู้ใช้</label> <input type="text" id="username" class="form-input" required>
+     </div>
+     <div class="form-group"><label class="form-label" for="password">รหัสผ่าน</label> <input type="password" id="password" class="form-input" required>
+     </div><button type="submit" class="btn-submit">เข้าสู่ระบบ</button> <button type="button" class="btn-cancel" id="cancelLoginBtn">ยกเลิก</button>
+    </form>
+   </div>
+  </div><!-- Toast Notification -->
+  <div class="toast" id="toast"></div>
+  <script>
+        // LocalStorage Data Management
+        const STORAGE_KEYS = {
+            NEWS: 'school_news',
+            PERSONNEL: 'school_personnel',
+            DISTRICTS: 'school_districts',
+            HISTORY: 'school_history',
+            IS_LOGGED_IN: 'school_logged_in',
+            THEME: 'school_theme',
+            NEWS_SORT: 'school_news_sort'
+        };
+
+        const THEMES = {
+            blue: { primary: '#2563eb', secondary: '#1d4ed8', accent: '#fbbf24', name: 'น้ำเงิน' },
+            green: { primary: '#059669', secondary: '#047857', accent: '#fbbf24', name: '���ขียว' },
+            purple: { primary: '#7c3aed', secondary: '#6d28d9', accent: '#f59e0b', name: 'ม่วง' },
+            red: { primary: '#dc2626', secondary: '#b91c1c', accent: '#fbbf24', name: 'แดง' },
+            orange: { primary: '#ea580c', secondary: '#c2410c', accent: '#fbbf24', name: 'ส้ม' }
+        };
+
+        let allNewsData = [];
+        let allPersonnelData = [];
+        let districtLinks = {};
+        let historyData = { title: 'ประวัติโรงเรียน', content: '' };
+        let isLoggedIn = false;
+        let currentTheme = 'blue';
+        let newsSortOrder = 'newest';
+        const newsUploadedImages = { 1: null, 2: null, 3: null, 4: null };
+        let personnelUploadedImage = null;
+        let currentUploadMode = 'upload';
+        let currentPersonnelMode = 'upload';
+        let editingNewsIndex = null;
+
+        // Utility Functions
+        function showToast(message, isError = false) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = 'toast show' + (isError ? ' error' : '');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        function applyTheme(theme) {
+            const themeColors = THEMES[theme];
+            document.documentElement.style.setProperty('--primary-color', themeColors.primary);
+            document.documentElement.style.setProperty('--secondary-color', themeColors.secondary);
+            document.documentElement.style.setProperty('--accent-color', themeColors.accent);
+            
+            // Update active theme button
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-theme') === theme) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        function loadFromStorage() {
+            try {
+                allNewsData = JSON.parse(localStorage.getItem(STORAGE_KEYS.NEWS) || '[]');
+                allPersonnelData = JSON.parse(localStorage.getItem(STORAGE_KEYS.PERSONNEL) || '[]');
+                districtLinks = JSON.parse(localStorage.getItem(STORAGE_KEYS.DISTRICTS) || '{}');
+                const savedHistory = localStorage.getItem(STORAGE_KEYS.HISTORY);
+                if (savedHistory) {
+                    historyData = JSON.parse(savedHistory);
+                }
+                isLoggedIn = localStorage.getItem(STORAGE_KEYS.IS_LOGGED_IN) === 'true';
+                currentTheme = localStorage.getItem(STORAGE_KEYS.THEME) || 'blue';
+                newsSortOrder = localStorage.getItem(STORAGE_KEYS.NEWS_SORT) || 'newest';
+            } catch (e) {
+                console.error('Error loading data:', e);
+                allNewsData = [];
+                allPersonnelData = [];
+                districtLinks = {};
+                historyData = { title: 'ประวัติโรงเรียน', content: '' };
+                isLoggedIn = false;
+                currentTheme = 'blue';
+                newsSortOrder = 'newest';
+            }
+        }
+
+        function saveToStorage() {
+            try {
+                localStorage.setItem(STORAGE_KEYS.NEWS, JSON.stringify(allNewsData));
+                localStorage.setItem(STORAGE_KEYS.PERSONNEL, JSON.stringify(allPersonnelData));
+                localStorage.setItem(STORAGE_KEYS.DISTRICTS, JSON.stringify(districtLinks));
+                localStorage.setItem(STORAGE_KEYS.HISTORY, JSON.stringify(historyData));
+                localStorage.setItem(STORAGE_KEYS.THEME, currentTheme);
+                localStorage.setItem(STORAGE_KEYS.NEWS_SORT, newsSortOrder);
+            } catch (e) {
+                console.error('Error saving data:', e);
+                showToast('เกิดข้อผิดพลาดในการบันทึกข้อมูล', true);
+            }
+        }
+
+        function sortNews(newsArray) {
+            const sorted = [...newsArray];
+            if (newsSortOrder === 'newest') {
+                sorted.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+            } else {
+                sorted.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+            }
+            return sorted;
+        }
+
+        function updateDistrictLinks() {
+            for (let i = 1; i <= 9; i++) {
+                const linkElement = document.querySelector(`.district-link[data-index="${i}"]`);
+                if (linkElement) {
+                    const url = districtLinks[i];
+                    if (url && url.trim() !== '') {
+                        linkElement.href = url;
+                        linkElement.target = '_blank';
+                        linkElement.rel = 'noopener noreferrer';
+                    } else {
+                        linkElement.href = '#';
+                        linkElement.removeAttribute('target');
+                        linkElement.removeAttribute('rel');
+                        linkElement.addEventListener('click', function(e) {
+                            if (!this.href || this.href === window.location.href + '#' || this.href.endsWith('#')) {
+                                e.preventDefault();
+                            }
+                        });
+                    }
+                }
+            }
+        }
+
+        function renderDistrictLinksAdmin() {
+            const container = document.getElementById('districtLinksAdmin');
+            container.innerHTML = '';
+            
+            const districtNames = {
+                1: 'ตำบลไชโย',
+                2: 'ตำบลจรเข้ร้อง',
+                3: 'ตำบลไชยภูมิ',
+                4: 'ตำบลชะไว',
+                5: 'ตำบลตรีนรงค์',
+                6: 'ตำบลราชสถิตย์',
+                7: 'ตำบลหลักฟ้า',
+                8: 'ตำบลชัยฤทธิ์',
+                9: 'ตำบลทวราช'
+            };
+            
+            for (let i = 1; i <= 9; i++) {
+                const linkForm = document.createElement('div');
+                linkForm.className = 'section-card';
+                linkForm.innerHTML = `
+                    <h3 style="font-size: 1.1rem; font-weight: 600; color: #1e293b; margin-bottom: 1rem;">
+                        ${districtNames[i]}
+                    </h3>
+                    <input 
+                        type="url" 
+                        class="form-input" 
+                        id="districtLink${i}"
+                        placeholder="https://example.com"
+                        value="${districtLinks[i] || ''}"
+                    >
+                    <button class="btn-submit link-save-btn" data-index="${i}" style="margin-top: 1rem;">
+                        บันทึกลิงค์
+                    </button>
+                    <p style="font-size: 0.85rem; color: #64748b; margin-top: 0.5rem;">
+                        ${districtLinks[i] ? '✓ มีลิงค์แล้ว' : 'ยังไม่มีลิงค์'}
+                    </p>
+                `;
+                container.appendChild(linkForm);
+            }
+
+            document.querySelectorAll('.link-save-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const index = this.getAttribute('data-index');
+                    const input = document.getElementById(`districtLink${index}`);
+                    const url = input.value.trim();
+                    
+                    districtLinks[index] = url;
+                    saveToStorage();
+                    updateDistrictLinks();
+                    renderDistrictLinksAdmin();
+                    showToast('บันทึกลิงค์เรียบร้อย!');
+                });
+            });
+        }
+
+        function renderPublicNews() {
+            const newsGrid = document.getElementById('publicNewsGrid');
+            
+            let newsHtml = '';
+            
+            const sortedNews = sortNews(allNewsData);
+            sortedNews.forEach(news => {
+                const date = new Date(news.createdAt);
+                const dateStr = date.toLocaleDateString('th-TH', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                });
+
+                let imagesHtml = '';
+                if (news.image1 || news.image2 || news.image3 || news.image4) {
+                    imagesHtml = '<div class="news-item-images">';
+                    [news.image1, news.image2, news.image3, news.image4].forEach(img => {
+                        if (img) {
+                            imagesHtml += `<img src="${img}" alt="ภาพข่าว" loading="lazy">`;
+                        }
+                    });
+                    imagesHtml += '</div>';
+                }
+
+                newsHtml += `
+                    <div class="news-card">
+                        <div class="news-date">${dateStr}</div>
+                        <h3 class="news-title">${news.title}</h3>
+                        <p class="news-excerpt">${news.content}</p>
+                        ${imagesHtml}
+                    </div>
+                `;
+            });
+            
+            newsGrid.innerHTML = newsHtml;
+        }
+
+        function renderHistory() {
+            const titleElement = document.getElementById('historyDisplayTitle');
+            const contentElement = document.getElementById('historyDisplayContent');
+            
+            if (titleElement) {
+                titleElement.textContent = historyData.title;
+            }
+            if (contentElement) {
+                contentElement.textContent = historyData.content;
+            }
+        }
+
+        function renderPublicPersonnel() {
+            const personnelGrid = document.getElementById('personnelGrid');
+            
+            if (allPersonnelData.length === 0) {
+                personnelGrid.innerHTML = `
+                    <div style="grid-column: 1/-1;" class="empty-state">
+                        <p style="font-size: 1.1rem;">ยังไม่มีข้อมูลบุคลากร</p>
+                    </div>
+                `;
+                return;
+            }
+
+            personnelGrid.innerHTML = '';
+            allPersonnelData.forEach(person => {
+                const personnelItem = document.createElement('div');
+                personnelItem.className = 'personnel-item';
+                
+                const imageHtml = person.image 
+                    ? `<img src="${person.image}" alt="${person.name}" class="personnel-avatar" loading="lazy">`
+                    : `<div class="personnel-avatar-placeholder">👤</div>`;
+
+                personnelItem.innerHTML = `
+                    ${imageHtml}
+                    <h3 class="personnel-name">${person.name}</h3>
+                    <p class="personnel-position">${person.position}</p>
+                `;
+                personnelGrid.appendChild(personnelItem);
+            });
+        }
+
+        function renderAdminNews() {
+            const container = document.getElementById('newsList');
+            
+            if (allNewsData.length === 0) {
+                container.innerHTML = '<div class="empty-state"><p style="font-size: 1.1rem;">ยังไม่มีข่าวประชาสัมพันธ์</p><p>ค���ิกปุ่ม "เพิ่มข่าวใหม่" เพื่อเริ่มต้น</p></div>';
+                return;
+            }
+
+            container.innerHTML = '';
+            const sortedNews = sortNews(allNewsData);
+            
+            sortedNews.forEach((news) => {
+                const originalIndex = allNewsData.findIndex(n => n.id === news.id);
+                const newsItem = document.createElement('div');
+                newsItem.className = 'list-item';
+                
+                const date = new Date(news.createdAt);
+                const dateStr = date.toLocaleDateString('th-TH', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                });
+
+                let imagesHtml = '';
+                if (news.image1 || news.image2 || news.image3 || news.image4) {
+                    imagesHtml = '<div class="news-item-images">';
+                    [news.image1, news.image2, news.image3, news.image4].forEach(img => {
+                        if (img) {
+                            imagesHtml += `<img src="${img}" alt="ภาพข่าว" loading="lazy">`;
+                        }
+                    });
+                    imagesHtml += '</div>';
+                }
+
+                newsItem.innerHTML = `
+                    <div class="list-item-content">
+                        <h3>${news.title}</h3>
+                        <p>${news.content}</p>
+                        <div class="list-item-date">${dateStr}</div>
+                        ${imagesHtml}
+                    </div>
+                    <div class="list-item-actions">
+                        <button class="btn-edit edit-news-btn" data-index="${originalIndex}">��ก้ไข</button>
+                        <button class="btn-delete delete-news-btn" data-index="${originalIndex}">ลบ</button>
+                    </div>
+                `;
+                container.appendChild(newsItem);
+            });
+
+            // Edit buttons
+            document.querySelectorAll('.edit-news-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    editingNewsIndex = index;
+                    const news = allNewsData[index];
+                    
+                    document.getElementById('newsFormTitle').textContent = 'แก้ไขข่าวประชาสัมพันธ์';
+                    document.getElementById('newsSubmitBtn').textContent = 'อัพเดทข่าว';
+                    document.getElementById('newsTitle').value = news.title;
+                    document.getElementById('newsContent').value = news.content;
+                    
+                    // Load existing images
+                    for (let i = 1; i <= 4; i++) {
+                        const imageUrl = news[`image${i}`];
+                        if (imageUrl) {
+                            if (imageUrl.startsWith('data:')) {
+                                newsUploadedImages[i] = imageUrl;
+                                const uploadBox = document.getElementById(`newsUploadBox${i}`);
+                                uploadBox.classList.add('has-image');
+                                uploadBox.innerHTML = `
+                                    <img src="${imageUrl}" class="image-preview" alt="Preview">
+                                    <span style="font-size: 0.85rem; color: #10b981;">✓ อัพโหลดแล้ว</span>
+                                `;
+                            } else {
+                                document.getElementById(`newsLinkInput${i}`).value = imageUrl;
+                            }
+                        }
+                    }
+                    
+                    document.getElementById('newsForm').classList.add('show');
+                    document.getElementById('newsForm').scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+            // Delete buttons
+            document.querySelectorAll('.delete-news-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    allNewsData.splice(index, 1);
+                    saveToStorage();
+                    renderAdminNews();
+                    renderPublicNews();
+                    showToast('ลบข่าวเรียบร้อย!');
+                });
+            });
+        }
+
+        function renderAdminPersonnel() {
+            const container = document.getElementById('personnelAdminList');
+            
+            if (allPersonnelData.length === 0) {
+                container.innerHTML = '<div class="empty-state"><p style="font-size: 1.1rem;">ยังไม่มีบ���คลากร</p><p>คลิกปุ่ม "เพิ่มบุคลากร" เพื่อเริ่มต้น</p></div>';
+                return;
+            }
+
+            container.innerHTML = '';
+            allPersonnelData.forEach((person, index) => {
+                const personnelItem = document.createElement('div');
+                personnelItem.className = 'list-item';
+                
+                const imageHtml = person.image 
+                    ? `<img src="${person.image}" alt="${person.name}" loading="lazy">`
+                    : `<div class="personnel-avatar-small">👤</div>`;
+
+                personnelItem.innerHTML = `
+                    <div class="list-item-content">
+                        <div class="personnel-item-admin">
+                            ${imageHtml}
+                            <div>
+                                <h3>${person.name}</h3>
+                                <p>${person.position}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-item-actions">
+                        <button class="btn-delete delete-personnel-btn" data-index="${index}">ลบ</button>
+                    </div>
+                `;
+                container.appendChild(personnelItem);
+            });
+
+            document.querySelectorAll('.delete-personnel-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    allPersonnelData.splice(index, 1);
+                    saveToStorage();
+                    renderAdminPersonnel();
+                    renderPublicPersonnel();
+                    updatePersonnelLimitWarning();
+                    showToast('ลบบุคลากรเรียบร้อย!');
+                });
+            });
+        }
+
+        function updatePersonnelLimitWarning() {
+            const warning = document.getElementById('personnelLimitWarning');
+            const addBtn = document.getElementById('addPersonnelBtn');
+            
+            if (allPersonnelData.length >= 17) {
+                warning.classList.add('show');
+                addBtn.disabled = true;
+                addBtn.style.opacity = '0.5';
+                addBtn.style.cursor = 'not-allowed';
+            } else {
+                warning.classList.remove('show');
+                addBtn.disabled = false;
+                addBtn.style.opacity = '1';
+                addBtn.style.cursor = 'pointer';
+            }
+        }
+
+        function resetNewsForm() {
+            editingNewsIndex = null;
+            document.getElementById('newsFormTitle').textContent = 'เพิ่มข่าวประชาสัมพัน��์';
+            document.getElementById('newsSubmitBtn').textContent = 'บันทึกข่าว';
+            document.getElementById('newsFormElement').reset();
+            
+            for (let i = 1; i <= 4; i++) {
+                newsUploadedImages[i] = null;
+                const uploadBox = document.getElementById(`newsUploadBox${i}`);
+                uploadBox.classList.remove('has-image');
+                uploadBox.innerHTML = `
+                    <span style="font-size: 2rem;">📷</span>
+                    <span style="font-size: 0.9rem; color: #64748b; margin-top: 0.5rem;">รูปที่ ${i}</span>
+                    <span style="font-size: 0.75rem; color: #94a3b8; margin-top: 0.2rem;">รองรับ 1444x2000px</span>
+                `;
+                document.getElementById(`newsLinkInput${i}`).value = '';
+            }
+        }
+
+        // Theme selector
+        document.querySelectorAll('.theme-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const theme = this.getAttribute('data-theme');
+                currentTheme = theme;
+                applyTheme(theme);
+                saveToStorage();
+                showToast(`เปลี่ยนสีธีม${THEMES[theme].name}แล้ว!`);
+            });
+        });
+
+        // Sort buttons
+        document.querySelectorAll('.sort-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const sortType = this.getAttribute('data-sort');
+                newsSortOrder = sortType;
+                
+                document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                saveToStorage();
+                renderAdminNews();
+                renderPublicNews();
+                showToast(sortType === 'newest' ? 'เรียงใหม่สุดก่อน' : 'เรียงเก่าสุดก��อน');
+            });
+        });
+
+        // Login functionality
+        document.getElementById('loginBtn').addEventListener('click', function() {
+            if (isLoggedIn) {
+                document.getElementById('adminPanel').scrollIntoView({ behavior: 'smooth' });
+            } else {
+                document.getElementById('loginModal').classList.add('show');
+                document.getElementById('loginError').classList.remove('show');
+            }
+        });
+
+        document.getElementById('cancelLoginBtn').addEventListener('click', function() {
+            document.getElementById('loginModal').classList.remove('show');
+            document.getElementById('loginForm').reset();
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (username === 'admin' && password === '4912252106k') {
+                isLoggedIn = true;
+                localStorage.setItem(STORAGE_KEYS.IS_LOGGED_IN, 'true');
+                document.getElementById('loginModal').classList.remove('show');
+                document.getElementById('adminPanel').classList.add('show');
+                document.getElementById('loginBtn').textContent = 'จัดการเว็บไซต์';
+                document.getElementById('loginForm').reset();
+                renderAdminNews();
+                renderAdminPersonnel();
+                renderDistrictLinksAdmin();
+                updatePersonnelLimitWarning();
+                updateSortButtons();
+                
+                // Load history data into form
+                document.getElementById('historyTitle').value = historyData.title;
+                document.getElementById('historyContent').value = historyData.content;
+                
+                showToast('เข้าสู่ระบบสำเร็จ!');
+            } else {
+                document.getElementById('loginError').classList.add('show');
+            }
+        });
+
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            isLoggedIn = false;
+            localStorage.setItem(STORAGE_KEYS.IS_LOGGED_IN, 'false');
+            document.getElementById('adminPanel').classList.remove('show');
+            document.getElementById('loginBtn').textContent = 'เข้าสู่ระบบครู';
+            document.getElementById('newsForm').classList.remove('show');
+            document.getElementById('personnelForm').classList.remove('show');
+            showToast('ออกจากระบบแล้ว');
+        });
+
+        // Tab switching
+        document.querySelectorAll('.admin-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.admin-tab-content').forEach(c => c.classList.remove('active'));
+                
+                this.classList.add('active');
+                const tabName = this.getAttribute('data-tab');
+                document.getElementById(`${tabName}Tab`).classList.add('active');
+                
+                // Load history data when history tab is clicked
+                if (tabName === 'history') {
+                    document.getElementById('historyTitle').value = historyData.title;
+                    document.getElementById('historyContent').value = historyData.content;
+                }
+            });
+        });
+
+        // Upload mode switching for News
+        document.querySelectorAll('.upload-tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const tab = this.getAttribute('data-tab');
+                currentUploadMode = tab;
+                
+                document.querySelectorAll('.upload-tab-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                document.querySelectorAll('.upload-tab-content').forEach(c => c.classList.remove('active'));
+                document.getElementById(tab === 'upload' ? 'uploadTab' : 'linkTab').classList.add('active');
+            });
+        });
+
+        // Upload mode switching for Personnel
+        document.querySelectorAll('.upload-tab-btn-personnel').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const tab = this.getAttribute('data-tab');
+                currentPersonnelMode = tab;
+                
+                document.querySelectorAll('.upload-tab-btn-personnel').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                document.querySelectorAll('.upload-tab-content-personnel').forEach(c => c.classList.remove('active'));
+                document.getElementById(tab === 'upload' ? 'personnelUploadTab' : 'personnelLinkTab').classList.add('active');
+            });
+        });
+
+        // News image upload
+        for (let i = 1; i <= 4; i++) {
+            const uploadBox = document.getElementById(`newsUploadBox${i}`);
+            const fileInput = document.getElementById(`newsImageInput${i}`);
+            
+            uploadBox.addEventListener('click', () => fileInput.click());
+            
+            fileInput.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(event) {
+                        newsUploadedImages[i] = event.target.result;
+                        uploadBox.classList.add('has-image');
+                        uploadBox.innerHTML = `
+                            <img src="${event.target.result}" class="image-preview" alt="Preview">
+                            <span style="font-size: 0.85rem; color: #10b981;">✓ อัพโหลดแล้ว</span>
+                        `;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+
+        // Personnel image upload
+        const personnelUploadBox = document.getElementById('personnelUploadBox');
+        const personnelImageInput = document.getElementById('personnelImageInput');
+        
+        personnelUploadBox.addEventListener('click', () => personnelImageInput.click());
+        
+        personnelImageInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    personnelUploadedImage = event.target.result;
+                    personnelUploadBox.classList.add('has-image');
+                    personnelUploadBox.innerHTML = `
+                        <img src="${event.target.result}" class="image-preview" alt="Preview">
+                        <span style="font-size: 0.85rem; color: #10b981;">✓ อัพโหลดแล้ว</span>
+                    `;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // News form
+        document.getElementById('addNewsBtn').addEventListener('click', function() {
+            resetNewsForm();
+            document.getElementById('newsForm').classList.add('show');
+        });
+
+        document.getElementById('cancelNewsFormBtn').addEventListener('click', function() {
+            document.getElementById('newsForm').classList.remove('show');
+            resetNewsForm();
+        });
+
+        document.getElementById('newsFormElement').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const title = document.getElementById('newsTitle').value;
+            const content = document.getElementById('newsContent').value;
+            
+            let images = { 1: '', 2: '', 3: '', 4: '' };
+            
+            if (currentUploadMode === 'upload') {
+                for (let i = 1; i <= 4; i++) {
+                    images[i] = newsUploadedImages[i] || '';
+                }
+            } else {
+                for (let i = 1; i <= 4; i++) {
+                    const linkInput = document.getElementById(`newsLinkInput${i}`);
+                    images[i] = linkInput.value.trim();
+                }
+            }
+            
+            if (editingNewsIndex !== null) {
+                // Update existing news
+                allNewsData[editingNewsIndex] = {
+                    ...allNewsData[editingNewsIndex],
+                    title: title,
+                    content: content,
+                    image1: images[1],
+                    image2: images[2],
+                    image3: images[3],
+                    image4: images[4]
+                };
+                showToast('อัพเดทข่าวเรียบร้อย!');
+            } else {
+                // Add new news
+                const newsData = {
+                    id: Date.now().toString(),
+                    title: title,
+                    content: content,
+                    image1: images[1],
+                    image2: images[2],
+                    image3: images[3],
+                    image4: images[4],
+                    createdAt: new Date().toISOString()
+                };
+                allNewsData.unshift(newsData);
+                showToast('บันทึกข่าวเรียบร้อย!');
+            }
+            
+            saveToStorage();
+            renderAdminNews();
+            renderPublicNews();
+            document.getElementById('newsForm').classList.remove('show');
+            resetNewsForm();
+        });
+
+        // Personnel form
+        document.getElementById('addPersonnelBtn').addEventListener('click', function() {
+            if (allPersonnelData.length >= 17) {
+                showToast('ถึงขีดจำกัด 17 ���นแล้ว', true);
+                return;
+            }
+            document.getElementById('personnelForm').classList.add('show');
+        });
+
+        document.getElementById('cancelPersonnelFormBtn').addEventListener('click', function() {
+            document.getElementById('personnelForm').classList.remove('show');
+            document.getElementById('personnelFormElement').reset();
+            personnelUploadedImage = null;
+            const uploadBox = document.getElementById('personnelUploadBox');
+            uploadBox.classList.remove('has-image');
+            uploadBox.innerHTML = `
+                <span style="font-size: 3rem;">👤</span>
+                <span style="font-size: 0.9rem; color: #64748b; margin-top: 0.5rem;">คลิกเพื่ออัพโหลดรูป</span>
+            `;
+            document.getElementById('personnelLinkInput').value = '';
+        });
+
+        document.getElementById('personnelFormElement').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (allPersonnelData.length >= 17) {
+                showToast('ถึงขีดจำกัด 17 คนแล้ว', true);
+                return;
+            }
+            
+            const name = document.getElementById('personnelName').value;
+            const position = document.getElementById('personnelPosition').value;
+            
+            let imageUrl = '';
+            if (currentPersonnelMode === 'upload') {
+                imageUrl = personnelUploadedImage || '';
+            } else {
+                imageUrl = document.getElementById('personnelLinkInput').value.trim();
+            }
+            
+            const personnelData = {
+                id: Date.now().toString(),
+                name: name,
+                position: position,
+                image: imageUrl,
+                createdAt: new Date().toISOString()
+            };
+            
+            allPersonnelData.push(personnelData);
+            saveToStorage();
+            renderAdminPersonnel();
+            renderPublicPersonnel();
+            updatePersonnelLimitWarning();
+            
+            showToast('บันทึกบุคลากรเรียบร้อย!');
+            document.getElementById('personnelForm').classList.remove('show');
+            this.reset();
+            personnelUploadedImage = null;
+            const uploadBox = document.getElementById('personnelUploadBox');
+            uploadBox.classList.remove('has-image');
+            uploadBox.innerHTML = `
+                <span style="font-size: 3rem;">👤</span>
+                <span style="font-size: 0.9rem; color: #64748b; margin-top: 0.5rem;">คล��กเพื่ออัพโหลดรูป</span>
+            `;
+            document.getElementById('personnelLinkInput').value = '';
+        });
+
+        // History form
+        document.getElementById('historyFormElement').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const title = document.getElementById('historyTitle').value;
+            const content = document.getElementById('historyContent').value;
+            
+            historyData = { title, content };
+            saveToStorage();
+            renderHistory();
+            
+            showToast('บันทึกประวัติเรียบร้อย!');
+        });
+
+        // Update sort buttons display
+        function updateSortButtons() {
+            document.querySelectorAll('.sort-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-sort') === newsSortOrder) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Initialize on page load
+        function initializeApp() {
+            loadFromStorage();
+            applyTheme(currentTheme);
+            renderPublicNews();
+            renderPublicPersonnel();
+            renderHistory();
+            updateDistrictLinks();
+            
+            if (isLoggedIn) {
+                document.getElementById('adminPanel').classList.add('show');
+                document.getElementById('loginBtn').textContent = 'จัดการเว็บไซต์';
+                renderAdminNews();
+                renderAdminPersonnel();
+                renderDistrictLinksAdmin();
+                updatePersonnelLimitWarning();
+                updateSortButtons();
+                
+                // Load history data into form
+                document.getElementById('historyTitle').value = historyData.title;
+                document.getElementById('historyContent').value = historyData.content;
+            }
+        }
+
+        initializeApp();
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a70bafe10d4893b',t:'MTc2NDU3MjY2Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
